@@ -7,10 +7,16 @@ import {
   Avatar,
   Typography,
 } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
+import { useUser } from "../../components/Context/UserContext";
 
 const ProfileMenu = () => {
+  const navigate = useNavigate();
+  const { user } = useUser();
+
   return (
     <Menu>
+      <h2 className=" font-bold">{user.name}</h2>
       <MenuHandler>
         <Avatar
           variant="circular"
@@ -40,7 +46,7 @@ const ProfileMenu = () => {
             My Profile
           </Typography>
         </MenuItem>
-        <MenuItem className="flex items-center gap-2">
+        {/* <MenuItem className="flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -101,7 +107,7 @@ const ProfileMenu = () => {
           <Typography variant="small" className="font-normal">
             Help
           </Typography>
-        </MenuItem>
+        </MenuItem> */}
         <hr className="my-2 border-blue-gray-50" />
         <MenuItem className="flex items-center gap-2 ">
           <svg
@@ -118,7 +124,13 @@ const ProfileMenu = () => {
               d="M5.636 5.636a9 9 0 1012.728 0M12 3v9"
             />
           </svg>
-          <Typography variant="small" className="font-normal">
+          <Typography
+            variant="small"
+            className="font-normal"
+            onClick={() => {
+              navigate("/login", { replace: true });
+            }}
+          >
             Sign Out
           </Typography>
         </MenuItem>

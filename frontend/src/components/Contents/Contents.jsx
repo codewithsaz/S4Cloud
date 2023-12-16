@@ -73,7 +73,7 @@ const Contents = () => {
   return (
     <>
       {files && files.length > 0 ? (
-        <div className="content w-[calc(100%-1rem)] h-[calc(100%-5rem)] lg:h-[calc(100%-6rem)] rounded-lg m-2 p-2 overflow-y-auto flex flex-wrap gap-2 content-start justify-around sm:justify-stretch">
+        <div className="content w-[calc(100%-1rem)] h-[calc(100%-5rem)] lg:h-[calc(100%-6rem)] rounded-lg m-2 p-2 overflow-y-auto grid grid-cols-2 md:flex md:flex-wrap   gap-2 content-start justify-around sm:justify-stretch">
           {/* {files.map((file) => renderContent(file))} */}
           {files.map((file) => {
             if (showContent === "all") {

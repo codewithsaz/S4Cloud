@@ -10,7 +10,7 @@ const VideoViewer = (props) => {
   return (
     <div
       // key={props.id}
-      className=" w-44 sm:w-48 h-max bg-gray-300 rounded-lg p-1 flex-col relative"
+      className=" w-40 sm:w-48 h-max bg-gray-300 rounded-lg p-1 flex-col relative"
       onMouseEnter={() => setShowDeleteBtn(true)}
       onMouseLeave={() => setShowDeleteBtn(false)}
       onClick={openFileInNewTab}
